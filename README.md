@@ -4,7 +4,7 @@ Adds a button to the dashboard in an order to print it with a customizable templ
 
 ## Setup
 
-Install the module from the modx.com provider and enable it in Commerce -> Configuration -> Modules. Modify `admin/widgets/action-button.twig` in your template to include `{% if action.newWindow %} target="_blank"{% endif %}`. This allows it to open the print view in a new tab. Example: 
+Install the module from the modx.com provider and enable it in Commerce -> Configuration -> Modules. On 0.11.1 and below, modify `admin/widgets/action-button.twig` in your template to include `{% if action.newWindow %} target="_blank"{% endif %}`. This allows it to open the print view in a new tab. Example: 
 
 ```HTML
 <a href="{{ action.url }}" class="ui button {% if action.modal %}commerce-ajax-modal{% endif %}"{% if action.newWindow %} target="_blank"{% endif %}>
