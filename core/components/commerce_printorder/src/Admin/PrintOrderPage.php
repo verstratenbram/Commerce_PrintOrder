@@ -56,35 +56,44 @@ class PrintOrderPage extends Page
         // Load transactions
         $trans = [];
         $transactions = $order->getTransactions();
-        foreach ($transactions as $transaction) {
-            if ($transaction->isCompleted()) {
-                $traa = $transaction->toArray();
-                if ($method = $transaction->getMethod()) {
-                    $traa['method'] = $method->toArray();
+        if ($transactions) {
+            foreach ($transactions as $transaction) {
+                if ($transaction->isCompleted()) {
+                    $traa = $transaction->toArray();
+                    if ($method = $transaction->getMethod()) {
+                        $traa['method'] = $method->toArray();
+                    }
+                    $trans[] = $traa;
                 }
-                $trans[] = $traa;
             }
+            $data['transactions'] = $trans;
         }
-        $data['transactions'] = $trans;
 
         // Load shipments
         $ships = [];
         $shipments = $order->getShipments();
-        foreach ($shipments as $shipment) {
-            $sta = $shipment->toArray();
-            if ($method = $shipment->getShippingMethod()) {
-                $sta['method'] = $method->toArray();
+
+        if ($shipments) {
+            foreach ($shipments as $shipment) {
+                $sta = $shipment->toArray();
+                if ($method = $shipment->getShippingMethod()) {
+                    $sta['method'] = $method->toArray();
+                }
+                $ships[] = $sta;
             }
-            $ships[] = $sta;
+            $data['shipments'] = $ships;
         }
-        $data['shipments'] = $ships;
 
         // Load addresses
         $ba = $order->getBillingAddress();
-        $data['billing_address'] = $ba->toArray();
+        if ($ba) {
+            $data['billing_address'] = $ba->toArray();
+        }
 
         $sa = $order->getShippingAddress();
-        $data['shipping_address'] = $sa->toArray();
+        if ($sa) {
+            $data['shipping_address'] = $sa->toArray();
+        }
 
         echo $this->commerce->twig->render('printorder/print.twig', $data);
 
