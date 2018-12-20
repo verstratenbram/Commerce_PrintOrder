@@ -1,5 +1,9 @@
 PrintOrder for Commerce
 
-++ Released on
+++ v1.0.1 - Released on 12/19/2018
+++++++++++++++++++++++++++
+- Fix draft order 500 error
+
+++ v1.0.0 - Released on 8/1/2018
 ++++++++++++++++++++++++++
 - First release
