@@ -1,10 +1,12 @@
 <?php
-namespace RogueClarity\PrintOrder\Modules;
+
+namespace PoconoSewVac\PrintOrder\Modules;
+
 use modmore\Commerce\Modules\BaseModule;
 use modmore\Commerce\Admin\Util\Action;
 use modmore\Commerce\Events\Admin\OrderActions;
 use modmore\Commerce\Events\Admin\GeneratorEvent;
-use RogueClarity\PrintOrder\Admin\PrintOrderPage;
+use PoconoSewVac\PrintOrder\Admin\PrintOrderPage;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Twig\Loader\ChainLoader;
 use Twig\Loader\FilesystemLoader;
@@ -22,7 +24,7 @@ class PrintOrder extends BaseModule {
 
     public function getAuthor()
     {
-        return 'Tony Klapatch - Rogue Clarity Studios';
+        return 'Tony Klapatch';
     }
 
     public function getDescription()

@@ -1,13 +1,13 @@
 <?php
 
-namespace RogueClarity\PrintOrder\Admin;
+namespace PoconoSewVac\PrintOrder\Admin;
 
 use modmore\Commerce\Admin\Page;
 
 /**
  * PrintOrder for Commerce.
  *
- * Copyright 2018 by Tony Klapatch <tony.k@rogueclarity.com>
+ * Copyright 2019 by Tony Klapatch <tony@klapatch.net>
  *
  * This file is meant to be used with Commerce by modmore. A valid Commerce license is required.
  *
@@ -95,9 +95,10 @@ class PrintOrderPage extends Page
             $data['shipping_address'] = $sa->toArray();
         }
 
+        // Load configured system settings
         $module = $this->adapter->getObject('comModule', ['name' => 'Print Order']);
         if ($module && $module->getProperty('system_settings')) {
-            $settings = explode(',', $module->getProperty('system_settings'));
+            $settings = array_map('trim', explode(',', $module->getProperty('system_settings')));
             if (count($settings) > 0) {
                 foreach ($settings as $key) {
                     $data['config'][$key] = $this->adapter->getOption($key);

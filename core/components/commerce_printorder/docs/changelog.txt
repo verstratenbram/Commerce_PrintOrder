@@ -1,5 +1,9 @@
 PrintOrder for Commerce
 
+++ v1.1.0 - Released on 3/29/2018
+++++++++++++++++++++++++++
+- Add new option to pass configurable system settings to the template (thanks Sander!)
+
 ++ v1.0.1 - Released on 12/19/2018
 ++++++++++++++++++++++++++
 - Fix draft order 500 error

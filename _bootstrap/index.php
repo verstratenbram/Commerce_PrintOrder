@@ -105,7 +105,7 @@ include $componentPath . '/core/components/commerce_printorder/vendor/autoload.p
 $modulePath = $componentPath . '/core/components/commerce_printorder/src/Modules/';
 
 // Instruct Commerce to load modules from our directory, providing the base namespace and module path twice
-$commerce->loadModulesFromDirectory($modulePath, 'RogueClarity\\PrintOrder\\Modules\\', $modulePath);
+$commerce->loadModulesFromDirectory($modulePath, 'PoconoSewVac\\PrintOrder\\Modules\\', $modulePath);
 
 // Clear the cache
 $modx->cacheManager->refresh();
