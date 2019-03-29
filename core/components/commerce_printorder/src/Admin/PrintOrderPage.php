@@ -95,6 +95,16 @@ class PrintOrderPage extends Page
             $data['shipping_address'] = $sa->toArray();
         }
 
+        $module = $this->adapter->getObject('comModule', ['name' => 'Print Order']);
+        if ($module && $module->getProperty('system_settings')) {
+            $settings = explode(',', $module->getProperty('system_settings'));
+            if (count($settings) > 0) {
+                foreach ($settings as $key) {
+                    $data['config'][$key] = $this->adapter->getOption($key);
+                }
+            }
+        }
+
         echo $this->commerce->twig->render('printorder/print.twig', $data);
 
         @session_write_close();

@@ -8,6 +8,7 @@ use RogueClarity\PrintOrder\Admin\PrintOrderPage;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Twig\Loader\ChainLoader;
 use Twig\Loader\FilesystemLoader;
+use modmore\Commerce\Admin\Widgets\Form\TextField;
 
 require_once dirname(dirname(__DIR__)) . '/vendor/autoload.php';
 
@@ -65,7 +66,13 @@ class PrintOrder extends BaseModule {
 
     public function getModuleConfiguration(\comModule $module)
     {
-        $fields = [];
+        $fields[] = new TextField($this->commerce, [
+            'name'        => 'properties[system_settings]',
+            'label'       => $this->adapter->lexicon('commerce.printorder.property.system_settings'),
+            'description' => $this->adapter->lexicon('commerce.printorder.property.system_settings_desc'),
+            'value'       => $module->getProperty('system_settings')
+        ]);
+
         return $fields;
     }
 }
