@@ -1,5 +1,9 @@
 PrintOrder for Commerce
 
+++ v1.1.2 - Released on 3/31/2018
+++++++++++++++++++++++++++
+- Default to order reference instead of order id in default template
+
 ++ v1.1.1 - Released on 3/29/2018
 ++++++++++++++++++++++++++
 - Fix upgrade from v1.0

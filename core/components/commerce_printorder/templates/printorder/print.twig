@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>{{ lex('commerce_printorder.print_title', {order: order.id}) }}</title>
+        <title>{{ lex('commerce_printorder.print_title', {order: order.reference}) }}</title>
         <link rel="stylesheet" href="https://unpkg.com/hartija---css-print-framework@1.0.0/print.css" type="text/css" media="print" charset="utf-8">
     </head>
     <body onload="if (window.opener) { window.print();window.close(); }">
         <div class="c-order-details">
-            <h2>{{ lex('commerce.order') }} #{{ order.id }}</h2>
+            <h2>{{ lex('commerce.order') }} #{{ order.reference }}</h2>
 
             <ul class="c-order-summary">
                 <li>
