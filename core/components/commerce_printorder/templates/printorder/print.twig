@@ -7,7 +7,7 @@
         <title>{{ lex('commerce_printorder.print_title', {order: order.reference}) }}</title>
         <link rel="stylesheet" href="https://unpkg.com/hartija---css-print-framework@1.0.0/print.css" type="text/css" media="print" charset="utf-8">
     </head>
-    <body onload="if (window.opener) { window.print();window.close(); }">
+    <body onload="if (window.opener) { window.print(); setTimeout(function () { window.close(); }, 100); }">
         <div class="c-order-details">
             <h2>{{ lex('commerce.order') }} #{{ order.reference }}</h2>
 
