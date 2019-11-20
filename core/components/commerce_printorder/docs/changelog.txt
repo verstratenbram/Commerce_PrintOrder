@@ -1,5 +1,9 @@
 PrintOrder for Commerce
 
+++ v1.1.3 - Released on 11/20/2019
+++++++++++++++++++++++++++
+- Fix print window immediatly closing on some newer versions of Chrome
+
 ++ v1.1.2 - Released on 3/31/2018
 ++++++++++++++++++++++++++
 - Default to order reference instead of order id in default template
