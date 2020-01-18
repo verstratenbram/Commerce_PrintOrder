@@ -94,6 +94,16 @@ class PrintOrderPage extends Page
         if ($sa) {
             $data['shipping_address'] = $sa->toArray();
         }
+        
+        // Load order fields
+        $data['order_fields'] = [];
+        $fields = $order->getOrderFields();
+        foreach ($fields as $fld) {
+            $rendered = $fld->renderForCustomer();
+            if (!empty($rendered)) {
+                $data['order_fields'][$fld->getName()] = $rendered;
+            }
+        }
 
         // Load configured system settings
         $module = $this->adapter->getObject('comModule', ['name' => 'Print Order']);
