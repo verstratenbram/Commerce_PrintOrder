@@ -1,5 +1,10 @@
 PrintOrder for Commerce
 
+++ v1.2.0 - Released on 1/22/2020
+++++++++++++++++++++++++++
+- Pass order_fields to twig template
+- Pass taxes to twig template (thanks wax100!)
+
 ++ v1.1.3 - Released on 11/20/2019
 ++++++++++++++++++++++++++
 - Fix print window immediately closing on some newer versions of Chrome

@@ -7,7 +7,7 @@ use modmore\Commerce\Admin\Page;
 /**
  * PrintOrder for Commerce.
  *
- * Copyright 2019 by Tony Klapatch <tony@klapatch.net>
+ * Copyright 2020 by Tony Klapatch <tony@klapatch.net>
  *
  * This file is meant to be used with Commerce by modmore. A valid Commerce license is required.
  *
@@ -95,8 +95,9 @@ class PrintOrderPage extends Page
             $data['shipping_address'] = $sa->toArray();
         }
         
+        // Load taxes
         $ta = $order->getTaxTotals();
-        if ($sa) {
+        if ($ta) {
              $data['taxes'] = $ta;
         }
         

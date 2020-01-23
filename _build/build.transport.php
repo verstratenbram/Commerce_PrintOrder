@@ -23,7 +23,7 @@ if (!defined('MOREPROVIDER_BUILD')) {
     /* define version */
     define('PKG_NAME', 'Commerce_PrintOrder');
     define('PKG_NAMESPACE', 'commerce_printorder');
-    define('PKG_VERSION', '1.1.3');
+    define('PKG_VERSION', '1.2.0');
     define('PKG_RELEASE', 'pl');
 
     /* load modx */

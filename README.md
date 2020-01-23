@@ -19,4 +19,8 @@ These placeholders are available in the twig file:
 - shipments
 - billing_address
 - shipping_address
-- config (if any system settings are configured)
+- config (if any system settings are configured) 
+- order_fields (since v1.2.0)
+- taxes (since v1.2.0)
+
+To see the full data of what these placeholders contain, see information on debugging templates here: https://docs.modmore.com/en/Commerce/v1/Front-end_Theming.html#page_Debugging+templates
