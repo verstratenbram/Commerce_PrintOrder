@@ -95,6 +95,11 @@ class PrintOrderPage extends Page
             $data['shipping_address'] = $sa->toArray();
         }
         
+        $ta = $order->getTaxTotals();
+        if ($sa) {
+             $data['taxes'] = $ta;
+        }
+        
         // Load order fields
         $data['order_fields'] = [];
         $fields = $order->getOrderFields();
