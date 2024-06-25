@@ -122,7 +122,7 @@ class PrintOrderPage extends Page
             }
         }
 
-        echo $this->commerce->view()->twig()->render('printorder/print.twig', $data);
+        echo $this->commerce->view()->render('printorder/print.twig', $data);
 
         @session_write_close();
         exit();
