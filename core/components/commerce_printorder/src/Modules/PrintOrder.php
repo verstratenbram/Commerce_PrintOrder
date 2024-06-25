@@ -38,10 +38,7 @@ class PrintOrder extends BaseModule {
         $this->adapter->loadLexicon('commerce_printorder:default');
 
         // Add template path to twig
-        /** @var ChainLoader $loader */
-        $root = dirname(dirname(__DIR__));
-        $loader = $this->commerce->view()->twig()->getLoader();
-        $loader->addLoader(new FilesystemLoader($root . '/templates/'));
+        $this->commerce->view()->addTemplatesPath(dirname(dirname(__DIR__)) . '/templates/');
 
         $dispatcher->addListener(\Commerce::EVENT_DASHBOARD_ORDER_ACTIONS, [$this, 'addPrintButton']);
         $dispatcher->addListener(\Commerce::EVENT_DASHBOARD_INIT_GENERATOR, [$this, 'initGenerator']);
